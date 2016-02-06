@@ -1,7 +1,7 @@
 package com.symphony.webapp.controller;
 
-import org.appfuse.model.User;
-import org.appfuse.service.UserManager;
+import com.symphony.model.User;
+import com.symphony.service.UserManager;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

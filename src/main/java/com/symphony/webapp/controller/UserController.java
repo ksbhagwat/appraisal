@@ -1,6 +1,6 @@
 package com.symphony.webapp.controller;
 
-import org.appfuse.service.UserManager;
+import com.symphony.service.UserManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;

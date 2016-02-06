@@ -33,6 +33,9 @@
             <plugin>
                 <groupId>de.juplo</groupId>
                 <artifactId>hibernate4-maven-plugin</artifactId>
+                <configuration>
+                    <scanDependencies>none</scanDependencies>
+                </configuration>
             </plugin>
             <!-- Sets cargo.port and cargo.ajp.port to open ports -->
             <plugin>
