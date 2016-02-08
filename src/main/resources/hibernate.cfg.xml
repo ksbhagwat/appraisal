@@ -8,5 +8,7 @@
     <session-factory>
         <mapping class="com.symphony.model.User"/>
         <mapping class="com.symphony.model.Role"/>
+         <mapping class="com.symphony.model.Employee"/>
+          <mapping class="com.symphony.model.Salary"/>
     </session-factory>
 </hibernate-configuration>
