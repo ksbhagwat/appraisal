@@ -23,7 +23,7 @@ import org.hibernate.search.annotations.Indexed;
 public class Employee extends BaseObject implements Serializable{
 
 	private Long id;
-	private List<Salary> salary;
+	private List<Salary> salaryList;
 	private String firstName;                   // required
 	private String lastName;                    // required
 	private String email;
@@ -42,14 +42,14 @@ public class Employee extends BaseObject implements Serializable{
 	}
     
 	@OneToMany(mappedBy="employee")
-	public List<Salary> getSalary() {
-		return salary;
+	public List<Salary> getSalaryList() {
+		return salaryList;
 	}
 	/**
 	 * @param salary the salary to set
 	 */
-	public void setSalary(List<Salary> salary) {
-		this.salary = salary;
+	public void setSalaryList(List<Salary> salary) {
+		this.salaryList = salary;
 	}
 	
     @Column(name = "first_name", nullable = false, length = 50)
@@ -97,7 +97,7 @@ public class Employee extends BaseObject implements Serializable{
 		result = prime * result + ((firstName == null) ? 0 : firstName.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((lastName == null) ? 0 : lastName.hashCode());
-		result = prime * result + ((salary == null) ? 0 : salary.hashCode());
+		result = prime * result + ((salaryList == null) ? 0 : salaryList.hashCode());
 		return result;
 	}
 	/* (non-Javadoc)
@@ -132,10 +132,10 @@ public class Employee extends BaseObject implements Serializable{
 				return false;
 		} else if (!lastName.equals(other.lastName))
 			return false;
-		if (salary == null) {
-			if (other.salary != null)
+		if (salaryList == null) {
+			if (other.salaryList != null)
 				return false;
-		} else if (!salary.equals(other.salary))
+		} else if (!salaryList.equals(other.salaryList))
 			return false;
 		return true;
 	}
@@ -144,7 +144,7 @@ public class Employee extends BaseObject implements Serializable{
 	 */
 	@Override
 	public String toString() {
-		return "Employee [id=" + id + ", salary=" + salary + ", firstName=" + firstName + ", lastName=" + lastName
+		return "Employee [id=" + id + ", salary=" + salaryList + ", firstName=" + firstName + ", lastName=" + lastName
 				+ ", email=" + email + "]";
 	} 
 	

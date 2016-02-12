@@ -1,5 +1,6 @@
 package com.symphony.dao;
 
+import java.util.Date;
 import java.util.List;
 
 import com.symphony.model.Employee;
@@ -18,7 +19,7 @@ public interface EmployeeDao extends GenericDao<Employee, Long> {
      *
      * @return List populated list of users
      */
-	public List<Salary> getSalaryYearOnYear(Long employeeId , int year) ;
+	public List<Salary> getSalaryYearOnYear(Long employeeId , Date startDate , Date endDate) ;
 
     
 }

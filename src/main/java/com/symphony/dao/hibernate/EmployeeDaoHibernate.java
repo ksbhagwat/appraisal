@@ -1,6 +1,5 @@
 package com.symphony.dao.hibernate;
 
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -19,37 +18,16 @@ public class EmployeeDaoHibernate extends GenericDaoHibernate<Employee, Long>  i
 	}
 
 	@Override
-	public List<Salary> getSalaryYearOnYear(Long employeeId , int year) {
+	public List<Salary> getSalaryYearOnYear(Long employeeId , Date startDate , Date endDate) {
 		List<Salary> salaryList = getSession().createCriteria(Salary.class).
 	add(Restrictions.eq("employee.id", employeeId)).
-	add(Restrictions.le("startDate", toEndOfYear(year))).
-	add(Restrictions.ge("endDate", toStartOfYear(year))).
+	add(Restrictions.le("startDate", endDate)).
+	add(Restrictions.ge("endDate", startDate)).
 	list();
 		return salaryList;
 	}
 
-	public Date toStartOfYear(int year) {
-	    Calendar calendar = Calendar.getInstance();
-	    calendar.set(Calendar.YEAR, year);
-	    calendar.set(Calendar.DAY_OF_YEAR, 1);
-	    calendar.set(Calendar.HOUR_OF_DAY, 0);
-	    calendar.set(Calendar.MINUTE, 0);
-	    calendar.set(Calendar.SECOND, 0);
-	    System.out.println(calendar.getTime());
-	    return calendar.getTime();
-	}
-
-	public Date toEndOfYear(int year) {
-	    Calendar calendar = Calendar.getInstance();
-	    calendar.set(Calendar.YEAR, year);
-	    calendar.set(Calendar.MONTH, 11);
-	    calendar.set(Calendar.DAY_OF_MONTH, 31);
-	    calendar.set(Calendar.HOUR_OF_DAY, 11);
-	    calendar.set(Calendar.MINUTE, 59);
-	    calendar.set(Calendar.SECOND,59);
-	    System.out.println(calendar.getTime());
-	    return calendar.getTime();
-	}
+	
 	@Override
 	public Employee save(Employee employee) {
         if (log.isDebugEnabled()) {
