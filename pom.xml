@@ -92,5 +92,17 @@
         <dao.framework>hibernate</dao.framework>
         <web.framework>spring</web.framework>
 		<log4j2.version>2.0.2</log4j2.version>
+		<!--<jdbc.groupId>oracle</jdbc.groupId>
+		<jdbc.artifactId>mysql-connector-java</jdbc.artifactId>
+		<jdbc.version>5.1.27</jdbc.version>
+		<jdbc.driverClassName>com.mysql.jdbc.Driver</jdbc.driverClassName>
+		<jdbc.url>
+			<![CDATA[jdbc:mysql://localhost/${db.name}?createDatabaseIfNotExist=true&amp;useUnicode=true&amp;characterEncoding=utf-8&amp;autoReconnect=true]]>
+		</jdbc.url>
+		<jdbc.username>root</jdbc.username>
+		<jdbc.password/>
+		<jdbc.validationQuery><![CDATA[SELECT 1 + 1]]></jdbc.validationQuery>-->
+		<jdbc.username>adminaPpPj1q</jdbc.username>
+		<jdbc.password>IkWeV94da7QK</jdbc.password>
     </properties>
 </project>

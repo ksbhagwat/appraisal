@@ -27,6 +27,14 @@ public class EmployeeDaoHibernate extends GenericDaoHibernate<Employee, Long>  i
 		return salaryList;
 	}
 
+	@Override
+	public List<Salary> getSalaryPaidPerPeriod(Date startDate , Date endDate) {
+		List<Salary> salaryList = getSession().createCriteria(Salary.class).
+	add(Restrictions.le("startDate", endDate)).
+	add(Restrictions.ge("endDate", startDate)).
+	list();
+		return salaryList;
+	}
 	
 	@Override
 	public Employee save(Employee employee) {

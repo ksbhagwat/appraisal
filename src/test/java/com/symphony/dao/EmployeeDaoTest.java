@@ -18,10 +18,13 @@ public class EmployeeDaoTest extends BaseDaoTestCase {
 
     @Autowired
     private EmployeeDao employeeDao;
+    @Autowired
+    private SalaryDao salaryDao;
     
+    Employee employee1 = null;
     @Before
     public void setup(){
-    	Employee employee1 = new Employee();
+    	employee1 = new Employee();
     	employee1.setEmail("ksbhagwat@gmail.com");
     	employee1.setFirstName("Kiran");
     	employee1.setLastName("Bhagwat");
@@ -29,29 +32,38 @@ public class EmployeeDaoTest extends BaseDaoTestCase {
     	Salary salary1 = new Salary();
     	salary1.setBasic(BigDecimal.valueOf(10000));
     	salary1.setConveyance(BigDecimal.valueOf(2000));
-    	salary1.setHra(BigDecimal.valueOf(8000));
+    	salary1.setHra(salary1.getBasic().multiply(BigDecimal.valueOf(0.4)));//40% of Basic
     	salary1.setMedical(BigDecimal.valueOf(1250));
-    	salary1.setProvidendFund(BigDecimal.valueOf(6000));
-    	Calendar startDt1 = Calendar.getInstance();
-    	startDt1.set(2015, 1, 1);
-    	Calendar endDt1 = Calendar.getInstance();
-    	endDt1.set(2015, 1, 31);
+    	salary1.setProvidendFund(salary1.getBasic().multiply(BigDecimal.valueOf(0.25))); //25% of Basic
     	
+    	Calendar startDt1 = Calendar.getInstance();
+    	startDt1.set(2015, 0, 1);
+    	Calendar endDt1 = Calendar.getInstance();
+    	endDt1.set(2015, 0, 31);
+    	
+    	salary1.setEmployee(employee1);
     	salary1.setStartDate(startDt1.getTime());
     	salary1.setEndDate(endDt1.getTime());
     	salaryList.add(salary1);
     	employee1.setSalaryList(salaryList);
-    	
-    	employeeDao.save(employee1);
+//    	salaryDao.save(salary1);
+    	employee1 = employeeDao.save(employee1);
+    	System.out.println(salary1.getId());
     	
     }
     
     @Test
 	public void testGetSalary() {
-    	List<Salary> salaryList = employeeDao.getSalaryYearOnYear(1L,toStartOfYear(2015),toEndOfYear(2015));
+    	List<Salary> salaryList = employeeDao.getSalaryYearOnYear(employee1.getId(),toStartOfYear(2015),toEndOfYear(2015));
     	Assert.assertEquals(1, salaryList.size());
 	}
 
+    @Test
+    public void testGetSalaryPaidPerPeriod() {
+    	List<Salary> salaryList = employeeDao.getSalaryPaidPerPeriod(toStartOfYear(2015),toEndOfYear(2015));
+    	Assert.assertEquals(1, salaryList.size());
+    }
+    
     public Date toStartOfYear(int year) {
 	    Calendar calendar = Calendar.getInstance();
 	    calendar.set(Calendar.YEAR, year);

@@ -20,6 +20,9 @@ public interface EmployeeDao extends GenericDao<Employee, Long> {
      * @return List populated list of users
      */
 	public List<Salary> getSalaryYearOnYear(Long employeeId , Date startDate , Date endDate) ;
+	
+	
+	public List<Salary> getSalaryPaidPerPeriod(Date startDate , Date endDate) ;
 
     
 }
