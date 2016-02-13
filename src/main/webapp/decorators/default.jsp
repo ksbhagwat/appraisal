@@ -26,12 +26,15 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="<c:url value='/'/>">AppFuse Light</a>
+            <a href="http://appfuse.org"
+			title="AppFuse - eliminating project startup time"> <img
+			src="${ctx}/images/powered-by-appfuse.gif" width="203" height="75"
+			alt="AppFuse" /></a>
         </div>
         <div class="collapse navbar-collapse" id="navbar">
             <ul class="nav navbar-nav">
                 <li><a href="${ctx}/" title="Home">Home</a></li>
-                <li><a href="${ctx}/users" title="View Users">Users</a></li>
+              <!--   <li><a href="${ctx}/users" title="View Users">Users</a></li> -->
                 <!-- Add new menu items here -->
             </ul>
         </div>
