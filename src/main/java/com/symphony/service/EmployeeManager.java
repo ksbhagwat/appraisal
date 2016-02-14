@@ -35,6 +35,8 @@ public interface EmployeeManager extends GenericManager<Employee, Long> {
      */
     Employee saveEmployee(Employee employee) throws EmployeeExistsException;
     
+    void removeEmployee(Long employeeId);
+    
     
 
    

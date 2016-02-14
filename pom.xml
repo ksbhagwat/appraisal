@@ -102,7 +102,7 @@
 		<jdbc.username>root</jdbc.username>
 		<jdbc.password/>
 		<jdbc.validationQuery><![CDATA[SELECT 1 + 1]]></jdbc.validationQuery>-->
-		<jdbc.username>adminaPpPj1q</jdbc.username>
-		<jdbc.password>IkWeV94da7QK</jdbc.password>
+		<!--<jdbc.username>adminaPpPj1q</jdbc.username>
+		<jdbc.password>IkWeV94da7QK</jdbc.password>-->
     </properties>
 </project>

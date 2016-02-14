@@ -9,7 +9,7 @@
 		</p>
 
 	</div>
-	<div id="readmore">
+	<div>
 		<h3>Problem Statement</h3>
 		<p>There is a small organization. Which has few employees [they
 			can hire many and many can leave]. The employees are working at
@@ -43,11 +43,13 @@
 <div class="col-sm-3">
 
 	<h3>Demonstration</h3>
-  <form:form commandName="employee" method="post" action="employeeform" autocomplete="off"
-               onsubmit="return validateUser(this)" id="userForm" cssClass="well">
+  <form:form commandName="employees" method="post" action="employeeform" autocomplete="off"
+               onsubmit="return validateUser(this)" id="employeeForm" cssClass="well">
 		
 	<div class="form-group">
-	<label for="salaryYoY" class="control-label"><fmt:message key="employee.getSalaryYoY"/>:</label>
+	<form:select path="employees" items="${employeeMap}" />
+	
+	<!-- <label for="salaryYoY" class="control-label"><fmt:message key="employee.getSalaryYoY"/>:</label>
 		<form:input path="salaryYoY" id="salaryYoY" cssClass="form-control"/>
 	
             <button type="submit" class="btn btn-primary" name="Search" id="search">
@@ -62,22 +64,10 @@
 
             <a href="${ctx}/users" class="btn btn-default" id="cancel">
                 <i class="icon-remove"></i> <fmt:message key="button.cancel"/>
-            </a>
+            </a> -->
         </div>
 	</form:form>
 
 </div>
 
-<script type="text/javascript">
-function readMore() {
-    var main = document.getElementById("intro");
-    var more = document.getElementById("readmore");
-    if (main.style.display == "") {
-        main.style.display = "none";
-        more.style.display = "";
-    } else {
-        more.style.display =+ "none";
-        main.style.display = "";
-    }
-}
-</script>
+
