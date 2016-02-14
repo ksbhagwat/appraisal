@@ -4,7 +4,7 @@
 	<div id="intro">
 		<h2>Introduction to Appraisal System</h2>
 		<p>
-			<button class="btn btn-primary" onclick="#">View
+			<button class="btn btn-primary" onclick="location.href='users'">View
 				Demonstration</button>
 		</p>
 
@@ -41,6 +41,32 @@
 	</div>
 </div>
 <div class="col-sm-3">
+<!--
+	<h3>Demonstration</h3>
+  <form:form commandName="employees" method="post" action="employeeform" autocomplete="off"
+               onsubmit="return validateUser(this)" id="employeeForm" cssClass="well">
+		
+	<div class="form-group">
+	<form:select path="employees" items="${employeeMap}" />
+	
+	 <label for="salaryYoY" class="control-label"><fmt:message key="employee.getSalaryYoY"/>:</label>
+		<form:input path="salaryYoY" id="salaryYoY" cssClass="form-control"/>
+	
+            <button type="submit" class="btn btn-primary" name="Search" id="search">
+                <i class="icon-ok icon-white"></i> <fmt:message key="button.search"/>
+            </button>
+
+            <c:if test="${not empty param.id}">
+              <button type="submit" class="btn btn-danger" name="delete" id="delete">
+                  <i class="icon-trash"></i> <fmt:message key="button.delete"/>
+              </button>
+            </c:if>
+
+            <a href="${ctx}/users" class="btn btn-default" id="cancel">
+                <i class="icon-remove"></i> <fmt:message key="button.cancel"/>
+            </a> 
+        </div>
+	</form:form>-->
 
 </div>
 
