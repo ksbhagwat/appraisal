@@ -2,9 +2,10 @@ package com.symphony.service;
 
 import java.util.List;
 
+import org.appfuse.service.UserExistsException;
+
 import com.symphony.dao.EmployeeDao;
 import com.symphony.model.Employee;
-import com.symphony.model.User;
 
 
 /**

@@ -3,7 +3,6 @@ package com.symphony.util;
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.symphony.model.LabelValue;
 
 import java.util.Enumeration;
 import java.util.HashMap;
@@ -46,21 +45,7 @@ public final class ConvertUtil {
         return map;
     }
 
-    /**
-     * Convert a java.util.List of LabelValue objects to a LinkedHashMap.
-     *
-     * @param list the list to convert
-     * @return the populated map with the label as the key
-     */
-    public static Map<String, String> convertListToMap(List<LabelValue> list) {
-        Map<String, String> map = new LinkedHashMap<String, String>();
 
-        for (LabelValue option : list) {
-            map.put(option.getLabel(), option.getValue());
-        }
-
-        return map;
-    }
 
     /**
      * Method to convert a ResourceBundle to a Properties object.

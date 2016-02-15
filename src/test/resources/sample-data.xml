@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataset>
-    <table name="app_user">
+    <!-- table name="app_user">
         <column>id</column>
         <column>username</column>
         <column>password</column>
@@ -118,5 +118,5 @@
             <value description="user_id">-3</value>
             <value description="role_id">-2</value>
         </row>
-    </table>
+    </table> -->
 </dataset>

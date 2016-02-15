@@ -3,7 +3,5 @@
 
     <persistence-unit name="ApplicationEntityManager" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
-        <class>com.symphony.model.User</class>
-        <class>com.symphony.model.Role</class>
     </persistence-unit>
 </persistence>

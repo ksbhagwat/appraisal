@@ -12,11 +12,7 @@
     <!-- =================================================================== -->
     <!-- AOP: Configuration and Aspects                                      -->
     <!-- =================================================================== -->
-    <aop:config>
-        <aop:advisor id="userManagerTx" advice-ref="userManagerTxAdvice" pointcut="execution(* *..service.UserManager.*(..))" order="0"/>
-        <aop:advisor id="userManagerSecurity" advice-ref="userSecurityAdvice" pointcut="execution(* *..service.UserManager.saveUser(..))" order="1"/>
-        <aop:advisor id="managerTx" advice-ref="txAdvice" pointcut="execution(* *..service.*Manager.*(..))" order="2"/>
-    </aop:config>
+
 
     <!-- Enable @Transactional support -->
     <tx:annotation-driven/>
@@ -39,13 +35,6 @@
         </tx:attributes>
     </tx:advice>
 
-    <tx:advice id="userManagerTxAdvice">
-        <tx:attributes>
-            <tx:method name="save*" rollback-for="UserExistsException"/>
-        </tx:attributes>
-    </tx:advice>
-
-    <bean id="userSecurityAdvice" class="com.symphony.service.UserSecurityAdvice"/>
 
     <!-- =================================================================== -->
     <!-- Mail: Sender and Velocity configuration                             -->
