@@ -1,0 +1,15 @@
+Problem:-
+There is a small organization. Which has few employees [they can hire many and many can leave]. The employees are working at different designations and grade.
+Based on each grade they have few salary components e.g.
+               Basic salary
+               House rent allowance [ a % of Basic]
+               Medical  [ Fixed ]
+               Conveyance [ Fixed ]
+               Provident fund [ % of basic ]
+ 
+The components can vary, can be increased or decreased. Each year employee will get their increment letter and their salary will be processed based on the number of days they have worked during the month.
+ 
+The software should be able to have all above mentioned flexibility and offer generation of annual increment letter based on current salary structure and should keep the record of the monthly wages paid to each employee. The tool should have reporting capabilities to show up:
+               Salary of employee year on year
+               Salary paid to all the employees in given month/year.  
+ 
